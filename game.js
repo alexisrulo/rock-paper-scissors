@@ -1,45 +1,58 @@
-// Rock = 1, Paper = 2 and Scissors = 3
+// Rock, paper, scissors game
 
-function getComputerChoice () {
-    let randomNumber = Math.ceil(Math.random() * 3 )
-    return randomNumber
-}
+const options = ["rock", "paper", "scissors"]
 
-function playerChoice (){
+const getComputerChoice = () => {
+    const randomNumber = Math.floor(Math.random() * 3 )
+    return options[randomNumber]
+};
+
+const getPlayerChoice = () => {
+    let playerSelection = prompt("Choose Rock Paper or Scissors").toLowerCase();
+    if(options.includes(playerSelection)) return playerSelection;
+    else alert("Introduce a correct choose");
+};
+
+const game = (choiseUser, choisePC) => {
+    if(choiseUser === choisePC) return;
     
-        let playerSelection = prompt("Choose Rock Paper or Scissors").toLowerCase()
-        
-        if (playerSelection == "rock"){
-            playerSelection = 1
-            return playerSelection
-        }
-        else if (playerSelection == "paper"){
-            playerSelection = 2
-            return playerSelection
-        }
-        else if (playerSelection == "scissors"){
-            playerSelection = 3
-            return playerSelection
-        }
-        else {
-            alert("Introduce a correct choose");
-        }
-    
-}
-function game (num1, num2){
-    if (num1 === num2){
-        return alert("Empate");
+    else if (choiseUser === "rock" && choisePC === "scissors" ||
+        choiseUser === "paper" && choisePC === "rock" ||
+        choiseUser === "scissors" && choisePC === "paper"){
+            return "playerWin";
     }
-    else if (num1 === 1 && num2 === 3 || num1 === 2 && num2 === 1 || num1 === 3 && num2 === 2){
-        return alert("You win")
-    }
+
     else{
-        return alert("You Loose")
+        return "playerLoose";
     }
+};
+
+let playerSelection;
+let computerChoise;
+let result;
+let playerPoints = 0;
+let computerPoints = 0;
+
+while (playerPoints < 3 && computerPoints < 3) {
+    playerSelection = getPlayerChoice ()
+    computerChoise = getComputerChoice ()
+    result = game (playerSelection , computerChoise)
+        if (result === "playerWin"){
+            playerPoints++
+            alert(`You choise ${playerSelection.toUpperCase()} and PC choise ${computerChoise.toUpperCase()} - You win this round -> You: ${playerPoints} - PC: ${computerPoints}`)
+        }
+        else if (result === "playerLoose"){
+            computerPoints++
+            alert(`You choise ${playerSelection.toUpperCase()} and PC choise ${computerChoise.toUpperCase()} - You loose this round -> You: ${playerPoints} - PC: ${computerPoints}`)
+        }
+        else{
+            alert(`You choise ${playerSelection.toUpperCase()} and Pc choise ${computerChoise.toUpperCase()} - Tie -> You: ${playerPoints} - PC: ${computerPoints}`)
+        }
 }
 
-let playerFinalSelection = playerChoice ()
-console.log(playerFinalSelection)
-let computerChoise = getComputerChoice ()
-console.log(computerChoise)
-game (playerFinalSelection , computerChoise)
+if (playerPoints>computerPoints){
+    alert ("You win....!!!! 😁😁🥳🥳")
+}
+else{
+    alert ("You loose")
+}

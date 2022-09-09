@@ -5,14 +5,26 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock, Paper and Scissors</title>
+    <link rel="stylesheet" href="./styles.css">
     <script src="game.js" type="text/javascript" async></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <h2>Play Rock, Paper and Scissors againts the computer</h2>
-    <div >
-        <div></div>
-        <div></div>
-        <div></div>
+    <h1 class="title">Rock - Paper - Scissors</h1>
+    <h2 class="status">Lets Play</h2>
+    <div class="points">
+        <p>User Points: <span class="userPoints">0</span></p>
+        <p>PC Points: <span class="pcPoints">0</span></p>
+    </div>
+    <div class="buttons">
+        <button class="rock"">Rock</button>
+        <button class="paper">Paper</button>
+        <button class="scissors">Scissors</button>
+    </div>
+    <div class="resetDiv">
+        <button class="reset">Reset</button>
     </div>
 </body>
 </html>

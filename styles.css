@@ -1,0 +1,56 @@
+body{
+    font-family: 'Roboto Condensed', sans-serif;
+    height: 100vh;
+    background-color: #FF3CAC;
+    background-image: linear-gradient(225deg, #FF3CAC 0%, #784BA0 50%, #2B86C5 100%);
+
+}
+.buttons{
+    display: flex;
+    gap: 100px;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+.buttons button{
+    height: 100px;
+}
+button{
+    width: 180px;
+    border-radius: 8px;
+    backdrop-filter: blur(8px);
+    font-size: 2em;
+    font-weight: bold;
+}
+.resetDiv button{
+    height: 50px;
+}
+.resetDiv{
+    display: flex;
+
+    justify-content: center;
+  
+}
+
+
+.points{
+    display: flex;
+    gap: 50px;
+    font-size: 2em;
+    justify-content: center;
+}
+.title{
+    text-align: center;
+    font-size: 3em;
+}
+.status{
+    text-align: center;
+    font-size: 2.5em;
+}
+@media (max-width: 640px) {
+.buttons{
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+    
+}
